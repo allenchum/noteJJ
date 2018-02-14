@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="edit-page.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <title>NoteJJ</title>
+</head>
+
+<body>
+    <div id='main-container'>
+        <div id='control-bar'>
+            <button class="btn yellow" id="upload-image">Upload Image</button>
+            <button class="btn yellow" id="add-node">Add Node</button>
+        </div>
+
+        <div id='canvas-container'>
+            <canvas id='whiteboard' width='700px' height="700px"></canvas>
+        </div>
+
+        <div id='input-area'>
+            <button class='btn al-right blue' id="enter">Enter Text</button>
+            <p class="text">
+                <textarea name="text" class="input text-input" id='title' placeholder="Title"></textarea>
+            </p>
+
+            <p class="text">
+                <textarea name="text" class="input text-input" id="content" placeholder="Content"></textarea>
+            </p>
+            <button class='btn al-right green' id="submit">Submit Note</button>
+            <button class='btn al-right red' id="cancel">Cancel</button>
+        </div>
+
+    </div>
+
+</body>
+
+<script src="canvas-common.js"></script>
+<script src="canvas-add-node.js"></script>
+
+
+</html>
