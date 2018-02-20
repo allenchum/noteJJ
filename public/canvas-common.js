@@ -4,6 +4,7 @@ let canvasReal = document.getElementById('canvasReal');
 let contextReal = canvasReal.getContext('2d');
 let currentFunction;
 let dragging = false;
+let imageSize = {height:$('#height-input').val() ,width: $('#width-input').val() }
 
 
 
@@ -25,6 +26,14 @@ currentFunction = new ParentFunction();
 
 $('#add-node').click(function(){
     currentFunction = new AddNode(contextReal, contextDraft);
+});
+$('#upload-image').click(function(){
+    console.log('button is clicked');
+    $('#file').trigger('click');
+
+});
+$('#file').click(function(){
+    console.log('file input is clicked');
 })
 
 
