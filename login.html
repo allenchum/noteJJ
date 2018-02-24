@@ -57,7 +57,19 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <div class="menu_login_container rfloat _ohf" data-testid="royal_login_form"><form id="login_form" action="#" method="post" novalidate="1" onsubmit="return window.Event &amp;&amp; Event.__inlineSubmit &amp;&amp; Event.__inlineSubmit(this,event)"><input type="hidden" name="lsd" value="AVpY6iXU" autocomplete="off"><table cellspacing="0" role="presentation"><tbody><tr><td class="html7magic"><label for="account">Account</label></td><td class="html7magic"><label for="pass">Password</label></td></tr><tr><td><input type="email" class="inputtext" name="email" id="email" tabindex="1" data-testid="royal_email"></td><td><input type="password" class="inputtext" name="pass" id="pass" tabindex="2" data-testid="royal_pass"></td><td><label class="uiButton uiButtonConfirm" id="loginbutton" for="u_0_a"><input value="Login" tabindex="4" data-testid="royal_login_button" type="submit" id="u_0_a"></label></td></tr><tr><td class="login_form_label_field"></td><td class="login_form_label_field"><div></div></td></tr></tbody></table><input type="hidden" autocomplete="off" name="timezone" value="-480" id="u_0_b"><input type="hidden" autocomplete="off" name="lgndim" value="eyJ3IjoyNTYwLCJoIjoxMDgwLCJhdyI6MjQ5NywiYWgiOjEwODAsImMiOjI0fQ==" id="u_0_c"><input type="hidden" name="lgnrnd" value="212629_gFl2"><input type="hidden" id="lgnjs" name="lgnjs" value="1519363591"><input type="hidden" autocomplete="off" name="ab_test_data" value=""><input type="hidden" autocomplete="off" id="locale" name="locale" value="zh_HK"><input type="hidden" autocomplete="off" name="login_source" value="login_bluebar"><input type="hidden" autocomplete="off" id="prefill_contact_point" name="prefill_contact_point"><input type="hidden" autocomplete="off" id="prefill_source" name="prefill_source"><input type="hidden" autocomplete="off" id="prefill_type" name="prefill_type"><input type="hidden" name="skstamp" value="eyJyb3VuZHMiOjUsInNlZWQiOiIwYjdjNmU3MTQ5YTk3MGM3NzA3NjU4YjdmOWNlMmM5MiIsInNlZWQyIjoiNzA3MGJjMTdlNzAzZmM5YmM0MWQ1MTk5YmFhOTUyMTgiLCJoYXNoIjoiN2NiMDYxZjdmNzVjYjc4MDhhY2YxN2RjODIwMGYwODgiLCJoYXNoMiI6IjM0ODQ5YWY0NDFhNGQwZmQ1NDgxNGQ5NDFiMmQ3ODcxIiwidGltZV90YWtlbiI6Mjk3MCwic3VyZmFjZSI6ImxvZ2luIn0="></form></div>
+                  <form action="/login" method="post">
+                    <div>
+                        <label>email:</label>
+                        <input type="text" name="username"/>
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input type="password" name="password"/>
+                    </div>
+                    <div>
+                        <input type="submit" value="Log In"/>
+                    </div>
+                </form>
             </ul>
           </div>
         </div>
@@ -65,6 +77,7 @@
   
       <!-- Page Content -->
       <div class="container">
+        <p>No Account? Sign up!</p>>
   
        
       </div>
