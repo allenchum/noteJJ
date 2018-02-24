@@ -4,7 +4,11 @@ const session = require('express-session');
 const setupPassport = require('./passport');
 const bodyParser = require('body-parser');
 const router = require('./router')(express);
+const path = require('path');
+const fileUpload = require('express-fileupload');
+const cookieParser = require('cookie-parser')
 const port = process.env.PORT || 3030;
+
 
 app.use(session({
     secret: 'supersecret'
