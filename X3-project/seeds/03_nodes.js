@@ -12,7 +12,8 @@ exports.seed = function(knex, Promise) {
           node_x2: 100,
           node_y2: 100,
           node_content: "Apple Pie",
-          note_id: 1
+          note_id: 1,
+          node_title: "Red fruit"
         },
         {
           id: 2,
@@ -21,7 +22,8 @@ exports.seed = function(knex, Promise) {
           node_x2: 50,
           node_y2: 50,
           node_content: "Banana Pie",
-          note_id: 1
+          note_id: 1,
+          node_title: "Yellow fruit"
         },
         {
           id: 3,
@@ -30,7 +32,8 @@ exports.seed = function(knex, Promise) {
           node_x2: 300,
           node_y2: 200,
           node_content: "Fruit",
-          note_id: 1
+          note_id: 1,
+          node_title: "What is this?"
         },
         {
           id: 4,
@@ -39,7 +42,8 @@ exports.seed = function(knex, Promise) {
           node_x2: 1000,
           node_y2: 1000,
           node_content: "Pineapple",
-          note_id: 1
+          note_id: 1,
+          node_title: "with pins"
         },
         {
           id: 5,
@@ -48,7 +52,8 @@ exports.seed = function(knex, Promise) {
           node_x2: 120,
           node_y2: 200,
           node_content: "Kiwi",
-          note_id: 2
+          note_id: 2,
+          node_title: "Good nutrition"
         },
         {
           id: 6,
@@ -57,7 +62,8 @@ exports.seed = function(knex, Promise) {
           node_x2: 100,
           node_y2: 100,
           node_content: "Egg",
-          note_id: 2
+          note_id: 2,
+          node_title: "Good Content"
         },
         {
           id: 7,
@@ -66,7 +72,8 @@ exports.seed = function(knex, Promise) {
           node_x2: 100,
           node_y2: 100,
           node_content: "this girl is hot and we want to fuck her",
-          note_id: 2
+          note_id: 2,
+          node_title: "Some remarks"
         },
       ]);
     });

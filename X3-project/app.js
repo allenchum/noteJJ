@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
+const hb = require('express-handlebars');
 const session = require('express-session');
 const bodyParser = require('body-parser');
+const multer = require('multer'); //multer
+const upload = multer({dest:'uploads/'});
+const fileUpload = require('express-fileupload');
 const port = process.env.PORT || 8000;
 
 //passport - facebook strategy
@@ -17,6 +21,10 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(bodyParser.json());
+
+// handlebars
+app.engine('handlebars', hb({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
 //passport for facebook-login ---- separate into another .js and module.exports?
 
@@ -77,6 +85,8 @@ app.get('/auth/facebook/callback',
           // user not in the table, insert one to the table now
           return knex.insert({
             name: req.user.profile.displayName,
+            firstName: req.user.profile.name.givenName,
+            profilePicLink: req.user.profile.photos[0],
             gender: req.user.profile.gender,
             facebookID: req.user.profile.id,
             created_at: knex.fn.now()
@@ -110,7 +120,12 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/', isLoggedIn, (req, res) => {
-  res.sendFile(__dirname + '/views/index.html');
+  res.render(__dirname + '/views/partial/create-form');
+});
+
+app.post('/create-new', isLoggedIn, (req,res) => {
+    console.log(req.body);
+    res.render(__dirname + '/views/partial/edit-page');
 });
 
 // serving static files in folder "views"
