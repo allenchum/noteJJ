@@ -1,4 +1,9 @@
-    $('#file').on('change',function(e){
+$(document).ready(function(){
+    
+
+});
+
+$('#file').on('change',function(e){
         /*clearCanvas();*/
         URL = URL || webkitURL;  /*added to amke it compatible for older browser*/
         var temp = URL.createObjectURL(e.target.files[0]);

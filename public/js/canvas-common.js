@@ -5,8 +5,7 @@ let contextReal = canvasReal.getContext('2d');
 let currentFunction;
 let dragging = false;
 let imageSize = {height:$('#height-input').val() ,width: $('#width-input').val() }
-
-
+let nodeArray = [];
 
 //ParentFunction 
 class ParentFunction{

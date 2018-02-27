@@ -1,7 +1,9 @@
 
 /* Main */
-#main-container{
-    margin: 5px;
+#edit-container{
+    position: relative;
+    top: 100px;
+    padding: 20px;
 }
 
 

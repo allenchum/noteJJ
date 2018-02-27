@@ -58,5 +58,8 @@ class AddNode extends ParentFunction {
         this.contextReal.strokeStyle = '#15B358';
         this.contextReal.stroke();
 
+        //create new node data
+        var newNode = new CreateNode();
+        nodeArray.push(newNode);
     }
 }
