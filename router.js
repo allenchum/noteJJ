@@ -1,4 +1,3 @@
-//router.js
 const passport = require('passport');
 
 module.exports = (express) => {
@@ -33,7 +32,7 @@ module.exports = (express) => {
     router.get('/', (req, res) => {
         res.sendFile(__dirname + '/index.html');
     });
-    
+
     router.get('/signup', (req, res) => {
         res.sendFile(__dirname + '/signup.html');
     });

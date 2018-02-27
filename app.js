@@ -4,6 +4,8 @@ const session = require('express-session');
 const setupPassport = require('./passport');
 const bodyParser = require('body-parser');
 const router = require('./router')(express);
+const bcrypt = require('./bcrypt')
+const user = require('./users')
 const path = require('path');
 const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser')
@@ -17,6 +19,8 @@ app.use(session({
 app.use(bodyParser());
 
 setupPassport(app);
+
+app.use(express.static('public'));
 
 app.use('/', router);
 
