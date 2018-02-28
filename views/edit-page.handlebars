@@ -2,8 +2,19 @@
 <link rel="stylesheet" type="text/css" href="../css/edit-page.css">
 
 
+{{!-- TextBox Template --}}
+<template id="textbox-template" >
+    <div class="text-container">
+        <div class="text-title"><p></p></div>
+        <div class="text-content"><p></p></div>
+    </div>
+</template>
+
+
 <div id="edit-container">
-    <div><h1 id='title'></h1></div>
+    <div>
+        <h1 id='title'></h1>
+    </div>
     <div id='main-container'>
         <div id='control-bar'>
             <button class="btn yellow" id="upload-image">Upload Image</button>
@@ -38,35 +49,41 @@
 
         </div>
 
+        {{!-- Canvas --}}
         <div id='canvas-container'>
             <canvas id='canvasDraft' width='700px' height="700px"></canvas>
             <canvas id='canvasReal' width='700px' height="700px"></canvas>
         </div>
+        {{!-- Textbox Container --}}
+        <div id="textboxesContainer">
+            
+        </div>
 
-        <div id='input-area'>
-            <button class='btn al-right blue' id="enter">Enter Text</button>
-            <p class="text">
-                <textarea name="text" class="input text-input" id='title' placeholder="Title"></textarea>
-            </p>
-
-            <p class="text">
-                <textarea name="text" rows='20' class="input text-input" id="content" placeholder="Content"></textarea>
-            </p>
+        <div id="input-area">
+            <form id='text-input'>
+                <input class='btn al-right blue' id="enter" type="submit" value="Enter Text">
+                <input class='coordinate' id="x1" type="number">
+                <input class='coordinate' id="y1" type="number">
+                <input class='coordinate' id="x2" type="number">
+                <input class='coordinate' id="y2" type="number">
+                <textarea name="text" class="input text-input" id='title' placeholder="Title" form="text-input"></textarea>
+                <textarea name="text" rows='20' class="input text-input" id="content" placeholder="Content" form="text-input"></textarea>
+            </form>
             <button class='btn al-right red' id="cancel">Cancel</button>
             <button class='btn al-right green' id="submit">Submit Note</button>
         </div>
-
-
     </div>
 </div>
 
 
-
-
+{{!-- Text Form --}}
+<script src="/js/clear-text.js"></script> 
+<script src="/js/submit-data.js"></script>
 
 {{!-- Canvas Functions --}}
 <script src="/js/canvas-common.js"></script>
 <script src="/js/canvas-AddNode.js"></script>
 <script src='/js/canvas-UploadImage.js'></script>
 <script src="/js/canvas-sizeControl.js"></script>
+
 </html>

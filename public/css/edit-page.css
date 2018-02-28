@@ -98,6 +98,9 @@
 .al-right{
     float: right;
 }
+.coordinate{
+    display:block;
+}
 
 
 

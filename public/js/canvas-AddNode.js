@@ -58,8 +58,10 @@ class AddNode extends ParentFunction {
         this.contextReal.strokeStyle = '#15B358';
         this.contextReal.stroke();
 
-        //create new node data
-        var newNode = new CreateNode();
-        nodeArray.push(newNode);
+        //submit node-coordinate to form
+        $('#x1').val(this.storeX);
+        $('#y1').val(this.storeY);
+        $('#x2').val(mouse.x);
+        $('#y2').val(mouse.y);
     }
 }
