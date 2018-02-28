@@ -1,11 +1,9 @@
-
 /* Main */
 #edit-container{
     position: relative;
     top: 100px;
     padding: 20px;
 }
-
 
 /* Control Bar */
 #control-bar{
@@ -83,7 +81,6 @@
     z-index: 11;
 }
 
-
 /* Input Area */
 #input-area{
     position: absolute;
@@ -99,10 +96,8 @@
     float: right;
 }
 .coordinate{
-    display:block;
+    display:none;
 }
-
-
 
 /* Button Style */
 .btn{
@@ -145,5 +140,22 @@
     background-color: #FF6656;
 }
   
+/* Text Boxes */
+.text-container{
+    border: solid rgba(255, 191, 128, 1) 1pt;
+    border-radius: 3px;
+    background-color: rgba(255, 191, 128, 0.3);
+    z-index: 100;
+}
+.text-title{
+    font-size: 12pt;
+    font-weight: bold;
+    padding: 0px 3px;
+    margin: 1px 1px;
+}
+.text-content{
+    padding: 0px 3px;
+    margin: 1px 1px;
+}
 
 

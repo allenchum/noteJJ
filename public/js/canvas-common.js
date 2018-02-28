@@ -27,70 +27,69 @@ $('#add-node').click(function(){
     currentFunction = new AddNode(contextReal, contextDraft);
 });
 $('#upload-image').click(function(){
-    console.log('button is clicked');
     $('#file').trigger('click');
-
 });
 $('#file').click(function(){
     console.log('file input is clicked');
-})
+});
+
 
 
 //Apply currentFunction to Canvas
 
-function logCoor(e,mouse){
-    console.log(`e.page:${e.pageX},${e.pageY}   offset:${this.offsetLeft},${this.offsetTop}   mouse:${mouse.x},${mouse.y}`)
-}
+
 
 $('#canvasDraft').mousedown(function(e){
     contextDraft.clearRect(0, 0, contextDraft.canvas.width, contextDraft.canvas.height);
     let mouse = {
-        x: e.pageX - $( this ).offset().left,      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
-        y: e.pageY -  $( this ).offset().top          //instead of [mouseX,mouseY]
+        x: Math.round(e.pageX - $( this ).offset().left),      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
+        y: Math.round(e.pageY -  $( this ).offset().top)         //instead of [mouseX,mouseY]
     };            
                              //I try keep using 'object' to store data, make it more consist.
     currentFunction.onMouseDown(mouse,e);
-    logCoor(e,mouse);
     dragging = true;
 });
 $('#canvasDraft').mousemove(function(e){
     let mouse = {
-        x: e.pageX - $( this ).offset().left,      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
-        y: e.pageY -  $( this ).offset().top   
+        x: Math.round(e.pageX - $( this ).offset().left),      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
+        y: Math.round(e.pageY -  $( this ).offset().top)  
     };  
     if (dragging){
      currentFunction.onDragging(mouse,e);
-     logCoor(e,mouse);
     }else{currentFunction.onMouseMove(mouse,e);}
 });
 
 $('#canvasDraft').mouseup(function(e){
     dragging = false;
     let mouse = {
-        x: e.pageX - $( this ).offset().left,      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
-        y: e.pageY -  $( this ).offset().top   
+        x: Math.round(e.pageX - $( this ).offset().left),      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
+        y: Math.round(e.pageY -  $( this ).offset().top)  
     };
     currentFunction.onMouseUp(mouse,e);
     contextReal.drawImage(canvasDraft,0,0);
     contextDraft.clearRect(0, 0, contextDraft.canvas.width, contextDraft.canvas.height);
+    currentFunction = new ParentFunction();
 });
 
 $('#canvasDraft').mouseleave(function(e){
     dragging = false;
     let mouse =  {
-        x: e.pageX - $( this ).offset().left,      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
-        y: e.pageY -  $( this ).offset().top   
+        x: Math.round(e.pageX - $( this ).offset().left),      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
+        y: Math.round(e.pageY -  $( this ).offset().top)  
     }; 
     currentFunction.onMouseLeave(mouse,e);
-    contextReal.drawImage(canvasDraft,0,0);
     contextDraft.clearRect(0, 0, contextDraft.canvas.width, contextDraft.canvas.height);
 });
 $('#canvasDraft').mouseenter(function(e){
     let mouse = {
-        x: e.pageX - $( this ).offset().left,      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
-        y: e.pageY -  $( this ).offset().top   
+        x: Math.round(e.pageX - $( this ).offset().left),      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
+        y: Math.round(e.pageY -  $( this ).offset().top)  
     }; 
     currentFunction.onMouseEnter(mouse,e);
 });
+
+ 
+
+
 
 

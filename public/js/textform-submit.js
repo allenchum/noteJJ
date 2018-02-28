@@ -1,17 +1,3 @@
-$(function () {
-  $('form').bind('submit', function () {
-    $.ajax({
-      type: 'post',
-      url: 'post.php',
-      data: $('form').serialize(),
-      success: function () {
-        alert('form was submitted');
-      }
-    });
-    return false;
-  });
-});
-
 $('#text-input').on('submit', function (e) {
   e.preventDefault();
 
@@ -31,6 +17,7 @@ $('#text-input').on('submit', function (e) {
   }
 
   console.log(nodeData);
+  createTextbox(nodeData);
 
   if (validateForm()) {
     $.post('/create-new/new-node', nodeData)
@@ -45,6 +32,7 @@ $('#text-input').on('submit', function (e) {
   }else{
       swal("Missing Information","","error");
   }
+  $("#text-input").trigger("reset");
 })
 
 function validateForm() {
