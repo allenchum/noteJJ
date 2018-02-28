@@ -30,6 +30,10 @@ app.post('/create-new',function(req,res){
     console.log(req.body);
     res.render('edit-page');   
 });
+app.post('/create-new/new-node',(req,res)=>{
+    let nodeData = req.body;
+    let query = knex                                
+})
 
 
 const port = 8080;

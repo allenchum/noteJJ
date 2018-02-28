@@ -4,7 +4,7 @@
 
 {{!-- TextBox Template --}}
 <template id="textbox-template" >
-    <div class="text-container">
+    <div class="text-container" style="position: absolute">
         <div class="text-title"><p></p></div>
         <div class="text-content"><p></p></div>
     </div>
@@ -56,7 +56,7 @@
         </div>
         {{!-- Textbox Container --}}
         <div id="textboxesContainer">
-            
+
         </div>
 
         <div id="input-area">
@@ -66,7 +66,7 @@
                 <input class='coordinate' id="y1" type="number">
                 <input class='coordinate' id="x2" type="number">
                 <input class='coordinate' id="y2" type="number">
-                <textarea name="text" class="input text-input" id='title' placeholder="Title" form="text-input"></textarea>
+                <textarea name="text" class="input text-input" id='text-title' placeholder="Title" form="text-input"></textarea>
                 <textarea name="text" rows='20' class="input text-input" id="content" placeholder="Content" form="text-input"></textarea>
             </form>
             <button class='btn al-right red' id="cancel">Cancel</button>
@@ -77,8 +77,8 @@
 
 
 {{!-- Text Form --}}
-<script src="/js/clear-text.js"></script> 
-<script src="/js/submit-data.js"></script>
+<script src="/js/textform-clear.js"></script> 
+<script src="/js/textform-submit.js"></script>
 
 {{!-- Canvas Functions --}}
 <script src="/js/canvas-common.js"></script>
