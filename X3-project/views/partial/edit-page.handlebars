@@ -1,0 +1,90 @@
+{{!-- Customize StyleSheet --}}
+<link rel="stylesheet" type="text/css" href="../assets/css/edit-page.css">{{!-- TextBox Template --}}
+<template id="textbox-template">
+    <div class="text-container" style="position: absolute">
+        <div class="text-title"><p></p></div>
+        <div class="text-content"><p></p></div>
+    </div>
+</template>
+
+
+<div id="edit-container">
+  <div>
+    <h1 id='title'></h1>
+  </div>
+  <div id='main-container'>
+    <div class="noteTitle">
+      <h4>Note Title: <em><strong>{{title}}<strong></em></h4>
+    </div>
+    <div id='control-bar'>
+      <button class="btn yellow" id="upload-image">Upload Image</button>
+      <button class="btn yellow" id="add-node">Add Node</button>
+      <input id="file" type="file" accept=".jpg, .jpeg, .png" />
+
+      <!-- Canvas Size Control-->
+      <!-- height -->
+      <div class="input-group spinner">
+        <input type="text" class="form-control" value="700" id='height-input'>
+        <div class="input-group-btn-vertical">
+          <button class="btn btn-default height" type="button">
+                        <i class="fa fa-caret-up"></i>
+                    </button>
+          <button class="btn btn-default height" type="button">
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+        </div>
+      </div>
+      <!-- width -->
+      <div class="input-group spinner">
+        <input type="text" class="form-control" value="700" id='width-input'>
+        <div class="input-group-btn-vertical">
+          <button class="btn btn-default width" type="button">
+                        <i class="fa fa-caret-up"></i>
+                    </button>
+          <button class="btn btn-default width" type="button">
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+        </div>
+      </div>
+
+    </div>
+
+    {{!-- Canvas --}}
+    <div id='canvas-container'>
+      <canvas id='canvasDraft' width='{{canvas_width}}px' height="{{canvas_height}}px"></canvas>
+      <canvas id='canvasReal' width='{{canvas_width}}px' height="{{canvas_height}}px"></canvas>
+    </div>
+    {{!-- Textbox Container --}}
+    <div id="textboxesContainer">
+
+    </div>
+
+    <div id="input-area">
+      <form id='text-input'>
+        <input class='btn al-right blue' id="enter" type="submit" value="Enter Text">
+        <input class='coordinate' id="x1" type="number" step='1'>
+        <input class='coordinate' id="y1" type="number" step='1'>
+        <input class='coordinate' id="x2" type="number" step='1'>
+        <input class='coordinate' id="y2" type="number" step='1'>
+        <textarea name="text" class="input text-input" id='text-title' placeholder="Title" form="text-input"></textarea>
+        <textarea name="text" rows='20' class="input text-input" id="content" placeholder="Content" form="text-input"></textarea>
+      </form>
+      <button class='btn al-right red' id="cancel">Cancel</button>
+      <button class='btn al-right green' id="submit">Submit Note</button>
+    </div>
+  </div>
+</div>
+
+
+{{!-- Text Form --}}
+<script src="../assets/js/create-textbox.js"></script>
+<script src="../assets/js/textform-clear.js"></script>
+<script src="../assets/js/textform-submit.js"></script>
+
+{{!-- Canvas Functions --}}
+<script src="../assets/js/canvas-common.js"></script>
+<script src="../assets/js/canvas-AddNode.js"></script>
+<script src='../assets/js/canvas-UploadImage.js'></script>
+<script src="../assets/js/canvas-sizeControl.js"></script>
+
+</html>
