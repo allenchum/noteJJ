@@ -16,9 +16,7 @@
     display: none;
 }
 
-.input-group {
-  visibility:hidden;
-}
+
 
 .spinner {
     display: flex;
@@ -64,6 +62,9 @@
   .form-control{
       align-self: center;
       height: 40px;
+  }
+  .spinner button i {
+    color: #2e2e2e;
   }
 
 

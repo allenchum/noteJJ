@@ -26,11 +26,12 @@ currentFunction = new ParentFunction();
 $('#add-node').click(function(){
     currentFunction = new AddNode(contextReal, contextDraft);
 });
+
 $('#upload-image').click(function(){
     console.log('button is clicked');
     $('#file').trigger('click');
-
 });
+
 $('#file').click(function(){
     console.log('file input is clicked');
 })
@@ -89,6 +90,6 @@ $('#canvasDraft').mouseenter(function(e){
     let mouse = {
       x: Math.round(e.pageX - $( this ).offset().left),      //Allen: object "mouse" store x-coordinate & y-coordinate of mouse event
       y: Math.round(e.pageY -  $( this ).offset().top)          //instead of [mouseX,mouseY]
-    }; 
+    };
     currentFunction.onMouseEnter(mouse,e);
 });

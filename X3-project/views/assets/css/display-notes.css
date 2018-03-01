@@ -1,9 +1,30 @@
+.notes-container {
+  position: relative;
+  top:110px;
+  width: 90vw;
+  margin: 20px auto;
+
+}
+.notesDisplay{
+  display: flex;
+  flex-flow: column;
+  border: 2pt #bbff33 solid;
+  border-radius: 5px;
+  width: 28vw;
+  margin: 8px 4px;
+  padding: 0;
+}
+.notesDisplay h5{
+  width: 100%;
+  padding: 0px 0px 2px 4px;
+  color: #fff;
+  background-color: #77b300;
+}
 .eachPic {
+  align-self: center;
+  margin: 1px auto;
   max-width: 20vw;
   max-height: 20vh
-  padding: 15px
-}
-
-.container {
+  padding: 15px;
 
 }

@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
 });
 
 $('#file').on('change',function(e){
