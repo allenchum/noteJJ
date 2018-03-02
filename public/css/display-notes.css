@@ -1,0 +1,10 @@
+.notes-container {
+  position: relative;
+
+}
+.eachPic {
+    max-width: 20vw;
+    max-height: 20vh;
+    padding: 15px;
+}
+  
