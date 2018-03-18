@@ -1,0 +1,43 @@
+ {{!-- Customize CSS--}}
+<link rel="stylesheet" type="text/css" href="../assets/css/create-form.css">
+
+
+
+<body>
+  <div class="displayName">
+    <h5>Hello, {{username}}.</h5>
+  </div>
+    <div id="create-banner" class="banner">
+        <button class="banner-btn" onclick="document.getElementById('modal-wrapper').style.display='block'">
+            Create
+        </button>
+        <h4 class="banner-text">Create your own note here.</h4>
+    </div>
+    {{!-- PopUp Form --}}
+    <div id='modal-wrapper' class='modal'>
+        <form class='modal-content animate' id='form' action="/create-new" method="post" enctype="multipart/form-data">
+            <div class='imgcontainer'>
+                <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                <img src="
+                  {{#if profileLink}}
+                    {{profileLink}}
+                  {{/if}}" alt="Avatar" class="avatar">
+                <h1 style="text-align:center">{{firstName}}, let's start!</h1>
+            </div>
+
+            <div class='input-container'>
+                <input type='text' placeholder="Title of note" name='title' required>
+                <input type="file" placeholder="Select a picture" name='imageUpload'>
+                <span id='dimension'>Dimension :</span>
+                <input type="number" placeholder="Width (px)" name='width' required>X
+                <input type="number" placeholder="Height (px)" name='height' required>
+                <button type='submit'>Create New Note</button>
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+
+{{!-- Customize JS --}}
